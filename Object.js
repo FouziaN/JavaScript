@@ -34,7 +34,7 @@ function findElement(collection){
     let allSongs = []
     for (let key in collection) {
         let value = collection[key]
-        if(value.hasOwnProperty("artist")){
+        if(value.artist !== undefined){
             let Name = value.artist
             let names = Name.split(" ")
             value.firstName = names[0]
@@ -43,7 +43,7 @@ function findElement(collection){
             }
         }
         value.numSongs = value.tracks ? value.tracks.length : 0
-        if(value.tracks !== undefined){
+        if(value.hasOwnProperty("tracks")){
             allSongs.push(...value.tracks)
             delete(value.tracks)
         }
@@ -55,25 +55,3 @@ function findElement(collection){
 findElement(collection)
 console.log(collection)
 
-let ar = 345
-function countDigit(num){
-    let numStr = num.toString();
-    let count = 0
-    for(let i = 0 ; i < numStr.length ; i++){
-        count++
-    }
-    console.log(count)
-}
-
-countDigit(ar)
-
-
-function countDigit(num) {
-    let count = 0;
-    while (num !== 0) {
-        num = (num / 10) | 0; // This drops the decimal part
-        count++;
-    }
-    console.log(count);
-}
-countDigit(ar)

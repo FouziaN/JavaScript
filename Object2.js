@@ -87,4 +87,18 @@ function deleteNullOrUndefined(collection) {
     return count;
   }
   
-  console.log(countObjectsWithKey(collection, "salary"));
+//   console.log(countObjectsWithKey(collection, "salary"));
+
+
+  function understand(collection){
+   let arr = [ 100 , 200 , 300]
+   arr[0] = 0;
+   arr[1] = 0;
+   arr[2] = 0;
+   console.log(arr[0])
+   console.log(arr[1])
+   console.log(arr[2])
+   console.log(arr[3])
+  }
+
+  understand(collection)
